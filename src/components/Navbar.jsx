@@ -6,7 +6,7 @@ import React from "react";
 const Navbar = () => {
   const pathName = usePathname();
   const router = useRouter();
- 
+
   const links = [
     {
       title: "About",
@@ -20,10 +20,14 @@ const Navbar = () => {
       title: "Contacts",
       path: "/contacts",
     },
+    {
+      title: "Blogs",
+      path: "/blogs",
+    },
   ];
   const handler = () => {
-    router.push('/login')
-  }
+    router.push("/login");
+  };
   return (
     <nav className="bg-red-500 px-6 py-3 flex justify-between items-center">
       <h6 className="text-3xl">
@@ -41,9 +45,11 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <button onClick={handler} className="bg-white text-cyan-400 p-4">Login</button>
+      <button onClick={handler} className="bg-white text-cyan-400 p-4">
+        Login
+      </button>
     </nav>
   );
 };
 
-export default Navbar; 
+export default Navbar;
